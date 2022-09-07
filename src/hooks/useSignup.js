@@ -14,7 +14,11 @@ export const useSignup = () =>{
 
         const response = await fetch('http://localhost:4000/api/user/signup',{
             method: 'POST',
-            header: {'Content-Type': 'application/json'},
+            mode: 'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify({email, password}),
         })
         // const response = await axios.post('http://localhost:4000/api/user/signup', JSON.stringify({email, password}), {'Content-Type': 'application/json'})
