@@ -1,9 +1,9 @@
 import React from 'react'
-// import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 function MapContainer() { 
   const mapStyles = {        
-    height: "100vh",
+    height: "100%",
     width: "100%"
   };
   const defaultCenter = {
@@ -11,14 +11,13 @@ function MapContainer() {
   } 
   return (
     <>
-    <h1>This is a Map Area</h1>
-      {/* <LoadScript googleMapsApiKey='AIzaSyClz6C_WlEL5iJjmY_-qx9EzsjjeGPEy0o'>
+      <LoadScript googleMapsApiKey='AIzaSyClz6C_WlEL5iJjmY_-qx9EzsjjeGPEy0o'>
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
           center={defaultCenter}
         />
-     </LoadScript> */}
+     </LoadScript>
     </>
   ) 
 }

@@ -1,10 +1,12 @@
-@import 'antd/dist/antd.less';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+// @import 'antd/dist/antd.less';
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 
 .main-veertical-nav{
     width: 100px;
+    position: absolute;
+    z-index: 10;
     // border: 2px solid red;
-    background-color: #d8f3dc;
+    background-color: #ffffff;
     height: calc(100vh - 49.29px);
     display: flex;
     align-items: center;
@@ -19,9 +21,10 @@
     text-align: center;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #1b4332;
+    background-color: #251B37;
     // border: 2px solid green;
-    color: #ffffff;
+    // color: #ffffff;
+    color: #FFCACA;
     border-radius: 15px;
 }
 .v-nav-items{
@@ -33,21 +36,25 @@
     margin: 10px 15px;
     // padding: 10px 15px;
     // margin-bottom: 15px;
-    color: #ffffff;
-    border: 2px solid #fff;
+    color: #FFCACA;
+    border: 2px solid #FFCACA;
     border-radius: 8px;
 }
 .profile{
     margin: 0px 15px;   
 }
 .profile-Avatar{
-    border: 2px solid #fff;
+    border: 2px solid #FFCACA;
     border-radius: 50%;
     font-size: 50px;
-    background-color: #fff;
+    background-color: #FFCACA;
     // padding: 15px;
 }
 .active{
-    color: #1b4332;
-    background-color: #ffffff;
+    color: #251B37;
+    background-color: #fff;
+    font-size: 25px;
+    margin: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 8px;
 }

@@ -13,7 +13,8 @@ const Signup = () =>{
     const {signup, isLoading, error} = useSignup()
 
     const handleSubmit = async (e) =>{
-        e.preventDefault()
+        // e.preventDefault()
+        console.log(email,password)
 
         await signup(email, password)
     }
@@ -29,7 +30,7 @@ const Signup = () =>{
         >
             <div className="mainForm">
                 <div className="form-inside">
-                    <Title level={1} style={{color:'white', fontFamily:"'Montserrat Alternates', sans-serif"}}>Sign up</Title>
+                    <Title level={1} style={{color:'#251B37', fontFamily:"'Montserrat Alternates', sans-serif"}}>Sign up</Title>
                     <Form.Item
                         label="Email :"
                         name="email"
@@ -80,7 +81,7 @@ const Signup = () =>{
                             // value={confirmPassword}
                         />
                     </Form.Item>
-                    <Button style={{ backgroundColor:'white', color:'#40916c',fontFamily:"'Montserrat Alternates', sans-serif" }} disabled={isLoading} type="primary" htmlType="submit">
+                    <Button style={{ backgroundColor:'#251B37', color:'#ffffff',fontFamily:"'Montserrat Alternates', sans-serif" }} disabled={isLoading} type="primary" htmlType="submit">
                         Signup
                     </Button>
                     {error && <div>{error}</div>}

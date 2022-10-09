@@ -11,10 +11,10 @@ function verticalNavbar() {
             <div className="main-veertical-nav">
                 <div className="vertical-nav-items">
                     <div className="v-nav-items">
-                        <NavLink to='shop' className="vertical-nav-item" activeClassName="active">
+                        <NavLink to='shop' className={({ isActive }) => isActive ? 'active' : 'vertical-nav-item' } >
                             <ShopOutlined />
                         </NavLink>
-                        <NavLink to='cart' className="vertical-nav-item" activeClassName="active">
+                        <NavLink to='cart' className={({ isActive }) => isActive ? 'active' : 'vertical-nav-item' } >
                             <ShoppingCartOutlined />
                         </NavLink>
                     </div>

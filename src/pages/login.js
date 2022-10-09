@@ -14,7 +14,6 @@ const Login = () => {
 
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
 
         await login(email, password)
     }
@@ -24,13 +23,11 @@ const Login = () => {
             layout="vertical"
             initialValues={{ remember: true }}
             onFinish={handleSubmit}
-            autoComplete="off"
-            // onFinishFailed={onFinishFailed}
-            // onSubmit={handleSubmit}
+            autoComplete="on"
         >
             <div className="mainForm">
                 <div className="form-inside">
-                    <Title level={1} style={{color:'white', fontFamily:"'Montserrat Alternates', sans-serif"}}>Login</Title>
+                    <Title level={1} style={{color:'#251B37', fontFamily:"'Montserrat Alternates', sans-serif"}}>Login</Title>
                     <Form.Item
                         label="Email :"
                         name="email"
@@ -56,7 +53,7 @@ const Login = () => {
                             value={password}
                         />
                     </Form.Item>
-                    <Button style={{ backgroundColor:'white', color:'#40916c',fontFamily:"'Montserrat Alternates', sans-serif" }} disabled={isLoading} type="primary" htmlType="submit">
+                    <Button style={{ backgroundColor:'#251B37', color:'#ffffff',fontFamily:"'Montserrat Alternates', sans-serif" }} disabled={isLoading} type="primary" htmlType="submit">
                         Login
                     </Button>
                     {error && <div>{error}</div>}

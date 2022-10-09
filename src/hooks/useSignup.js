@@ -1,12 +1,13 @@
-import axios from "axios";
 import { useState } from "react";
 import { useAuthContext } from './useAuthContext';
+import { useNavigate } from "react-router-dom";
 
 
 export const useSignup = () =>{
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
     const {dispatch} = useAuthContext()
+    const nevigate = useNavigate()
 
     const signup = async (email,password) =>{
         setIsLoading(true)
@@ -21,14 +22,7 @@ export const useSignup = () =>{
             },
             body: JSON.stringify({email, password}),
         })
-        // const response = await axios.post('http://localhost:4000/api/user/signup', JSON.stringify({email, password}), {'Content-Type': 'application/json'})
-        // .then((res)=>{
-        //     console.log('The url is Correct') 
-        //     console.log(res.status)})
-        // .catch((error)=>{
-        //     console.log(error)})
 
-        console.log(JSON.stringify({email, password}))
         const json = await response.json()
 
         if(!response.ok){
@@ -43,6 +37,7 @@ export const useSignup = () =>{
             dispatch({type: 'LOGIN', payload: json})
 
             setIsLoading(false)
+            nevigate('/shop')
         }
     }
     return{ signup, isLoading, error }
