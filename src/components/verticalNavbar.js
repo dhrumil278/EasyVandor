@@ -1,8 +1,8 @@
 import React from 'react'
 import '../Style/verticalNavbar.less';
-import { ShopOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { ShopOutlined, ShoppingCartOutlined, PlusCircleOutlined, ShoppingOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 function verticalNavbar() {
@@ -17,9 +17,17 @@ function verticalNavbar() {
                         <NavLink to='cart' className={({ isActive }) => isActive ? 'active' : 'vertical-nav-item' } >
                             <ShoppingCartOutlined />
                         </NavLink>
+                        <NavLink to='addShop' className={({ isActive }) => isActive ? 'active' : 'vertical-nav-item' } >
+                            <PlusCircleOutlined />
+                        </NavLink>
+                        <NavLink to='addShopItem' className={({ isActive }) => isActive ? 'active' : 'vertical-nav-item' } >
+                            <ShoppingOutlined />
+                        </NavLink>
                     </div>
                     <div className="profile">
-                        <Avatar className='profile-Avatar' size={40} src="https://joeschmoe.io/api/v1/random" />
+                        <Link to='profile'>
+                            <Avatar className='profile-Avatar' size={40} src="https://joeschmoe.io/api/v1/random" />
+                        </Link>
                     </div>
                 </div>
             </div>
